@@ -519,7 +519,6 @@ if __name__ == '__main__':
         else:
             stage = (stage + 0.4) % len(characters[character - 1][animations[animation]])
             animation = 'jump'
-            # параболу для прыжка взяла из видоса на ютубе
             if jump_height >= -9:
                 if jump_height > 0:
                     player_y -= (jump_height ** 2) / 2
@@ -576,15 +575,6 @@ if __name__ == '__main__':
                 for player_mask in player:
                     if pygame.sprite.collide_mask(player_mask, el):
                         intersection = True
-            # if intersections:
-            #     if intersections[0][0][0] < 15:
-            #         player_x -= intersections[0][0][0]
-            #     else:
-            #         player_x += intersections[0][0][0]
-            #     if intersections[0][0][1] < 15:
-            #         player_y -= intersections[0][0][1]
-            #     else:
-            #         player_y += intersections[0][0][1]
             change_player(player, character, animation, int(stage), player_x, player_y, is_inversion)
             if intersection:
                 player_x, player_y = old_x, old_y
